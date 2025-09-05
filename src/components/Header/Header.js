@@ -3,7 +3,7 @@ import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 import { SiItchdotio, SiGoogleplay } from 'react-icons/si';
-
+import Image from 'next/image';
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
 
 
@@ -12,7 +12,7 @@ const Header = () =>  (
     <Div1>
       <Link href ="/">
         <a style ={{display : "flex", alignItems: "center", color: 'white', marginBottom: '20px'}}>
-            <DiCssdeck size ="3rem" /> <Span> My portofolio</Span>
+            <Image src="/Icon.svg" alt="Logo" width={48} height={48} /> <Span> F1nn's portofolio</Span>
         </a>
       </Link>
     </Div1>

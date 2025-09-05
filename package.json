@@ -17,5 +17,8 @@
     "styled-components": "^5.3.0",
     "styled-normalize": "^8.0.7"
   },
-  "homepage": "https://new.f1nn.me"
+  "homepage": "https://new.f1nn.me",
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0"
+  }
 }
