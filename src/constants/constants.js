@@ -95,7 +95,7 @@ export const projects = [
   {
     title: 'LUNA',
     description: "Info coming soon...",
-    image: '/images/luna.png',
+    image: '',
     tags: ['Unity', 'C#', 'AI', 'Project'],
     source: '#',
     visit: '#',
@@ -105,7 +105,7 @@ export const projects = [
   {
     title: 'LoopDrive',
     description: "A wearable USB flash drive designed as a ring with a custom circular connector.",
-    image: '/images/loopdrive.png',
+    image: '',
     tags: ['Hardware', 'USB', 'Design', 'Electronics'],
     source: '#',
     visit: '#',
