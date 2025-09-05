@@ -7,6 +7,7 @@ import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTi
 
 const Footer = () => {
   return (
+  
    <FooterWrapper>
     <LinkList>
      <LinkColumn>
@@ -14,7 +15,7 @@ const Footer = () => {
       <LinkItem href ="tel:+31630689878">+31630689878</LinkItem>
      </LinkColumn>
      <LinkColumn>
-      <LinkTitle>Call</LinkTitle>
+      <LinkTitle>Mail me!</LinkTitle>
       <LinkItem href ="mailto:f1nndevgamer@gmail.com">f1nndevgamer@gmail.com</LinkItem>
      </LinkColumn>
     </LinkList>

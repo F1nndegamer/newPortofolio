@@ -1,6 +1,16 @@
-import React from 'react';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { AboutContainer, AboutText, AboutImage, ImageContainer } from './AboutStyles';
+import React from "react";
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import {
+  AboutContainer,
+  AboutText,
+  AboutImage,
+  ImageContainer,
+} from "./AboutStyles";
 
 const About = () => (
   <Section id="about">
@@ -9,22 +19,28 @@ const About = () => (
     <AboutContainer>
       <AboutText>
         <SectionText>
-          I'm a passionate Unity game developer with several years of experience creating engaging games 
-          and interactive experiences. I love participating in game jams and leading development teams to 
-          bring creative ideas to life.
+          Hey, I’m Finn! I’m an indie game developer who loves turning small
+          ideas into playable games. I work mostly with Unity and C#, trying to make games with
+          creativity, atmosphere, and little details that make every project feel
+          alive.
         </SectionText>
         <SectionText>
-          My journey started in 2017 when I first discovered Unity, and since then I've been constantly 
-          learning and improving my skills. I enjoy the challenge of solving complex problems and creating 
-          fun, memorable gaming experiences.
+          I started making games when I was 12, after a friend told me: "Hey,
+          you’re smart, make a game!" About three years ago I decided to fully
+          focus on game development, and on July 13th, 2022 I released my first
+          project. Since then, building games has become my favorite way to tell
+          stories, solve problems, and experiment with new mechanics through
+          jams and quick prototypes.
         </SectionText>
         <SectionText>
-          When I'm not coding, I'm usually brainstorming new game concepts, playing indie games for 
-          inspiration, or collaborating with other developers in the game development community.
+          When I’m not coding, you’ll probably find me bouldering, practicing
+          aerial silks, or making little side projects like electronics and 3D
+          printing. I’m always up for learning new things and collaborating with
+          others!
         </SectionText>
       </AboutText>
       <ImageContainer>
-        <AboutImage src="/images/profile.jpg" alt="About me" />
+        <AboutImage src="/Boulder.jpg" alt="About me" />
       </ImageContainer>
     </AboutContainer>
   </Section>

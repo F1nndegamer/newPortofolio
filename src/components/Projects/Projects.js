@@ -9,30 +9,41 @@ const Projects = () => (
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
-      {projects.map(({id, image, title, description, tags, source, visit, playtitle, extratitle = "Code"}) => (
-        <BlogCard key ={id}>
-          <Img src ={image} />
-          <TitleContent>
-            <HeaderThree title>{title}</HeaderThree>
-             <Hr />
-          </TitleContent>
-          <CardInfo>{description}</CardInfo>
-          <div>
-            <TitleContent>Stack</TitleContent>
-            <TagList>
-              {tags.map((tag, i) => (
-                <Tag Key= {i}>{tag}</Tag>
-              ))}
-            </TagList>
-          </div>
-          <UtilityList>
-            <ExternalLinks href = {source}>{extratitle}</ExternalLinks>
-            <ExternalLinks href = {visit}>{playtitle}</ExternalLinks>
-          </UtilityList>
-        </BlogCard>
-      ))}
+      {projects.map(
+        ({
+          id,
+          image,
+          title,
+          description,
+          tags,
+          source,
+          visit,
+          playtitle,
+          extratitle = "Code",
+        }) => (
+          <BlogCard key={id}>
+            {image && <Img src={image} />}
+            <TitleContent>
+              <HeaderThree title>{title}</HeaderThree>
+              <Hr />
+            </TitleContent>
+            <CardInfo>{description}</CardInfo>
+            <div>
+              <TitleContent topPadding="10px"></TitleContent>
+              <TagList>
+                {tags.map((tag, i) => (
+                  <Tag key={i}>{tag}</Tag>
+                ))}
+              </TagList>
+            </div>
+            <UtilityList>
+              <ExternalLinks href={source}>{extratitle}</ExternalLinks>
+              <ExternalLinks href={visit}>{playtitle}</ExternalLinks>
+            </UtilityList>
+          </BlogCard>
+        )
+      )}
     </GridContainer>
   </Section>
 );
-
 export default Projects;

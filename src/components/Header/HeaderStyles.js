@@ -1,5 +1,5 @@
-import { IoIosArrowDropdown } from 'react-icons/io';
-import styled from 'styled-components';
+import { IoIosArrowDropdown } from "react-icons/io";
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -19,7 +19,6 @@ export const Container = styled.div`
 `;
 export const Span = styled.span`
   font-size: 2rem;
-  
 `;
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
@@ -31,14 +30,22 @@ export const Div1 = styled.div`
   }
 `;
 export const Div2 = styled.div`
+  margin-top: 10px;
   grid-area: 1 / 2 / 2 / 4;
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* center everything */
+  gap: 3rem; /* space between elements */
+  margin-left: auto; /* center on X */
+  margin-right: auto;
+
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 2 / 3 / 5;
   }
 `;
+
+
 export const Div3 = styled.div`
+  margin-top: -10px;
   grid-area: 1 / 5 / 2 / 6;
   display: flex;
   justify-content: space-around;
@@ -48,7 +55,6 @@ export const Div3 = styled.div`
     grid-area: 1 / 4 / 2 / 6;
   }
 `;
-
 // Navigation Links
 export const NavLink = styled.a`
   font-size: 2rem;
@@ -64,6 +70,7 @@ export const NavLink = styled.a`
     padding: 0.5rem;
   }
 `;
+
 
 /// DropDown Contact
 export const ContactDropDown = styled.button`
@@ -98,8 +105,8 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   display: flex;
   align-self: center;
   transition: 0.3s ease;
-  opacity: ${({ isOpen }) => (isOpen ? '1' : '.75')};
-  transform: ${({ isOpen }) => (isOpen ? 'scaleY(-1)' : 'scaleY(1)')};
+  opacity: ${({ isOpen }) => (isOpen ? "1" : ".75")};
+  transform: ${({ isOpen }) => (isOpen ? "scaleY(-1)" : "scaleY(1)")};
 
   &:hover {
     opacity: 1;
@@ -111,18 +118,27 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   }
 `;
 
-
-// Social Icons 
+// Social Icons
 
 export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-border-radius: 50px;
+  display: flex;
+  transition: 0.3s ease;
+  color: white;
+  border-radius: 50px;
   padding: 8px;
-&:hover {
+  &:hover {
     background-color: #212d45;
     transform: scale(1.2);
     cursor: pointer;
-    
   }
-`
+`;
+export const ReportBugButton = styled(SocialIcons)`
+  margin-left: 15px;
+  display: flex;
+  align-items: right; // vertical centering
+  justify-content: center; // horizontal centering
+  height: 3rem; // match your other icons
+  line-height: 1; // ensures vertical centering
+  padding: 0 8px; // optional horizontal padding
+`;
+
