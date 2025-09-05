@@ -8,11 +8,13 @@ const Hero = (props) => (
   <Section row nopadding>
     <LeftSection>
       <SectionTitle main center>
-        Welcome to <br />
-        My portofolio
+         Hi, I’m Finn! <br />
+        Welcome to my Portfolio
       </SectionTitle>
       <SectionText>
-        I am a unity game developer
+        I'm a unity game developer who loves making games and working with code. 
+This is where I share the stuff I’ve built. Projects, experiments, and more!.
+
       </SectionText>
       <Button>Learn More</Button>
     </LeftSection>
