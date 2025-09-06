@@ -13,6 +13,7 @@ import {
 
 export const skillsData = [
   {
+    
     title: "Game Development",
     skills: [
       {
