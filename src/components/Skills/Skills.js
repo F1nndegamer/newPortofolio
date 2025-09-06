@@ -16,20 +16,20 @@ export const skillsData = [
     title: "Game Development",
     skills: [
       {
-        name: "Unity Engine",
-        description: "Advanced proficiency in Unity 2D/3D development",
+        name: "Unity",
+        description: "The Game Engine I use 90% of the time, for more then 3 years",
       },
       {
         name: "C# Programming",
-        description: "Strong programming skills in C# for game logic",
+        description: "Primary language for scripting in Unity",
       },
       {
         name: "Mobile Development",
-        description: "Experience publishing games on Google Play",
+        description: "Made multiple mobile games",
       },
       {
         name: "Game Publishing",
-        description: "Released games on platforms like Google Play and Steam",
+        description: "I published a few games on Google Play Store",
       },
     ],
   },
@@ -39,29 +39,16 @@ export const skillsData = [
       {
         name: "Version Control",
         description:
-          "Proficient with Git and collaborative development on GitHub",
+          "I have 2 years of experience with GitHub",
       },
       {
         name: "HTML, CSS & JavaScript",
-        description: "Building responsive web pages and interactive features",
-      },
-      {
-        name: "UI/UX Design & Animation",
-        description: "Designing and animating user-friendly game interfaces",
-      },
-      {
-        name: "3D Modeling & Printing",
-        description:
-          "Creating 3D assets and physical prototypes using Blender and 3D printers",
+        description: "I made some interesting web projects",
       },
       {
         name: "Programming Microcontrollers",
         description:
-          "Developing interactive electronics projects with Arduino/ESP32",
-      },
-      {
-        name: "System Engineering",
-        description: "Understanding of system architecture and integration",
+          "I really like making cool lil' projects with raspberry pis and esp32s",
       },
     ],
   },
@@ -71,11 +58,11 @@ export const skillsData = [
       {
         name: "Team Leadership",
         description:
-          "Led teams of up to 8 developers in game jams and projects",
+          "Worked together with teams of 2-9 people on some projects",
       },
       {
         name: "Game Design",
-        description: "Creative problem-solving and game mechanics design",
+        description: "I always like to make something where the player needs to think",
       },
     ],
   },
@@ -87,7 +74,7 @@ const Skills = () => (
     <SectionDivider />
     <SectionTitle main>My Skills</SectionTitle>
     <SectionText>
-      Here are the key skills and technologies I use to create engaging games and interactive experiences.
+      Here are the most important skills I got over the years.
     </SectionText>
     <SkillsContainer>
       {skillsData.map((category, index) => (
