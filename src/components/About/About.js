@@ -19,18 +19,18 @@ const About = () => (
     <AboutContainer>
       <AboutText>
         <SectionText>
-          Hey, I’m Finn! I’m an indie game developer who loves turning small
-          ideas into playable games. I work mostly with Unity and C#, trying to make games with
-          creativity, atmosphere, and little details that make every project feel
-          alive.
+          Hey, I’m F1nn! I’m an indie game developer who loves turning small
+          ideas into playable games. I work mostly with Unity and C#, trying to
+          make games with creativity, atmosphere, and little details that make
+          every project feel alive.
         </SectionText>
         <SectionText>
-          I started making games when I was 12, after a friend told me: "Hey,
-          you’re smart, make a game!" About three years ago I decided to fully
-          focus on game development, and on July 13th, 2022 I released my first
-          project. Since then, building games has become my favorite way to tell
-          stories, solve problems, and experiment with new mechanics through
-          jams and quick prototypes.
+          I started making games after a friend told me: “Hey, you’re smart,
+          make a game!” After some time, I decided to fully focus on game
+          development, and in July 2022 I released my first project. Since then,
+          building games has become my favorite way to tell stories, solve
+          problems, and experiment with new mechanics through jams and quick
+          prototypes.
         </SectionText>
         <SectionText>
           When I’m not coding, you’ll probably find me bouldering, practicing
