@@ -18,6 +18,10 @@ const Footer = () => {
       <LinkTitle>Mail me!</LinkTitle>
       <LinkItem href ="mailto:f1nndevgamer@gmail.com">f1nndevgamer@gmail.com</LinkItem>
      </LinkColumn>
+      <LinkColumn>
+      <LinkTitle>Or Message me on Discord!</LinkTitle>
+      <LinkItem href ="https://discord.com/users/768028545900871680">F1nndegamer</LinkItem>
+     </LinkColumn>
     </LinkList>
     <SocialIconsContainer>
       <CompanyContainer>
