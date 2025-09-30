@@ -32,6 +32,29 @@ export const SkillCategory = styled.div`
   }
 `;
 
+export const SkillCategoryTitle = styled.h3`
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.8) 60.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 14px;
+  }
+  
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+`;
+
 export const SkillList = styled.div`
   display: flex;
   flex-direction: column;

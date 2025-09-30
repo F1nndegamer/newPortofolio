@@ -3,6 +3,7 @@ import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles
 import { 
   SkillsContainer, 
   SkillCategory, 
+  SkillCategoryTitle,
   SkillList, 
   SkillItem, 
   SkillIcon, 
@@ -80,7 +81,7 @@ const Skills = () => (
     <SkillsContainer>
       {skillsData.map((category, index) => (
         <SkillCategory key={index}>
-          <SectionTitle>{category.title}</SectionTitle>
+          <SkillCategoryTitle>{category.title}</SkillCategoryTitle>
           <SkillList>
             {category.skills.map((skill, skillIndex) => (
               <SkillItem key={skillIndex}>
