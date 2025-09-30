@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "Beyond the boundries",
+    description:
+      "Steal items and don't get caught in this cute top-down roguelite!",
+    image: "/images/Raccoon.png",
+    tags: ["Game Jam", "Raccoon", "Unity", "C#", "Team"],
+    source: "https://github.com/F1nndegamer/Robby-Racoon",
+    visit: "https://f1nndegamer.itch.io/brackeys-jam-14",
+    playtitle: "Play the game",
+    id: -1,
+  },
+  {
     title: "Robby Raccoon",
     description:
       "Steal items and don't get caught in this cute top-down roguelite!",
