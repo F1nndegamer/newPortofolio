@@ -2,11 +2,11 @@ export const projects = [
   {
     title: "Beyond the boundries",
     description:
-      "Steal items and don't get caught in this cute top-down roguelite!",
-    image: "/images/Raccoon.png",
-    tags: ["Game Jam", "Raccoon", "Unity", "C#", "Team"],
-    source: "https://github.com/F1nndegamer/Robby-Racoon",
-    visit: "https://f1nndegamer.itch.io/brackeys-jam-14",
+      "A VERY bugged out game (Intended)",
+    image: "/images/Boundries.png",
+    tags: ["Game Jam", "Glitches", "Unity", "C#", "Team"],
+    source: "https://github.com/F1nndegamer/Beyond-The-Boundries",
+    visit: "https://f1nndegamer.itch.io/Boundries",
     playtitle: "Play the game",
     id: -1,
   },
