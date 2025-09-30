@@ -9,6 +9,7 @@ export const projects = [
     visit: "https://store.steampowered.com/app/3551950/Tribes/",
     playtitle: "Play the Demo!",
     extratitle: "Join the discord!",
+    currentProject: true,
     id: -1,
   },
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, CurrentProjectBadge } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/ProjectsData';
 
@@ -20,8 +20,10 @@ const Projects = () => (
           visit,
           playtitle,
           extratitle = "Code",
+          currentProject = false,
         }) => (
-          <BlogCard key={id}>
+          <BlogCard key={id} currentProject={currentProject}>
+            {currentProject && <CurrentProjectBadge>Current Project</CurrentProjectBadge>}
             {image && <Img src={image} />}
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>

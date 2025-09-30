@@ -27,10 +27,40 @@ export const BlogCard = styled.div`
   text-align: center;
   width: 100%; /* Changed from 400px to 100% */
   max-width: 400px; /* Added max-width for larger screens */
+  position: relative;
+  
+  ${props => props.currentProject && `
+    max-width: 350px;
+    border: 2px solid #d0bb57;
+    box-shadow: 0 0 20px rgba(208, 187, 87, 0.3), 3px 3px 20px rgba(80, 78, 78, 0.5);
+    transform: scale(1.1);
+  `}
+  
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+    ${props => props.currentProject && `
+      transform: scale(1.1);
+    `}
   }
 `;
+
+export const CurrentProjectBadge = styled.div`
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #d0bb57, #f4d03f);
+  color: #1a1a1a;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(208, 187, 87, 0.4);
+  z-index: 10;
+`;
+
 export const TitleContent = styled.div`
   text-align: center;
   z-index: 20;
