@@ -1,5 +1,17 @@
 export const projects = [
   {
+  title: "Tribes",
+    description:
+      "Tribes is a real-time strategy game where you build, battle, and survive against rival clans in a dynamic world of shifting dangers and opportunities.",
+    image: "/images/Tribes.jpg",
+    tags: ["Game Jam", "Tribes", "Unity", "C#", "Team"],
+    source: "https://discord.gg/Js4aU8DSnQ",
+    visit: "https://store.steampowered.com/app/3551950/Tribes/",
+    playtitle: "Play the Demo!",
+    extratitle: "Join the discord!",
+    id: -1,
+  },
+  {
     title: "Beyond the boundries",
     description:
       "A VERY bugged out game (Intended)",
@@ -144,14 +156,4 @@ export const projects = [
     playtitle: "Add your quotes!",
     id: 10,
   },
-];
-
-export const TimeLineData = [
-  { year: 2017, text: 'Started my Unity journey' },
-  { year: 2018, text: 'Led small team projects' },
-  { year: 2019, text: 'Participated in first Game Jams' },
-  { year: 2020, text: 'Published small games on itch.io' },
-  { year: 2021, text: 'Developed mobile games and wearable projects' },
-  { year: 2024, text: 'Led larger teams for GMTK and Brackeys Jams' },
-  { year: 2025, text: 'Worked on AI assistant LUNA and personal projects' },
 ];
