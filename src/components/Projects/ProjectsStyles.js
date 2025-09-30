@@ -39,7 +39,10 @@ export const BlogCard = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     ${props => props.currentProject && `
-      transform: scale(1.1);
+      transform: none;
+      border: 3px solid #d0bb57;
+      margin: 10px;
+      max-width: calc(100% - 20px);
     `}
   }
 `;
