@@ -1,6 +1,18 @@
 export const projects = [
   {
-  title: "Tribes",
+    title: "MCSR Dashboard",
+    description:
+      "A stats dashboard for tracking ranked runs, Elo changes, PB progress, and recent performance over time.",
+    image: "/images/nether-bg.webp",
+    tags: ["Website", "React", "Dashboard", "Stats"],
+    source: "https://github.com/F1nndegamer/mcsr-dashboard",
+    visit: "https://mcsr.f1nn.me",
+    playtitle: "Open project",
+    extratitle: "Code repo",
+    id: 11,
+  },
+  {
+    title: "Tribes",
     description:
       "Tribes is a real-time strategy game where you build, battle, and survive against rival clans in a dynamic world of shifting dangers and opportunities.",
     image: "/images/Tribes.jpg",
@@ -14,8 +26,7 @@ export const projects = [
   },
   {
     title: "Beyond the boundries",
-    description:
-      "A VERY bugged out game (Intended)",
+    description: "A VERY bugged out game (Intended)",
     image: "/images/Boundries.png",
     tags: ["Game Jam", "Glitches", "Unity", "C#", "Team"],
     source: "https://github.com/F1nndegamer/Beyond-The-Boundries",

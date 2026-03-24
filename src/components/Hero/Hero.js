@@ -20,7 +20,6 @@ const Hero = (props) => (
         This is where I share the stuff I’ve built. Projects, experiments, and
         more!.
       </SectionText>
-      <Button>Learn More</Button>
     </LeftSection>
   </Section>
 );
