@@ -1,5 +1,18 @@
 export const projects = [
   {
+    title: "Tribes",
+    description:
+      "Tribes is a real-time strategy game where you build, battle, and survive against rival clans in a dynamic world of shifting dangers and opportunities.",
+    image: "/images/Tribes.jpg",
+    tags: ["Game Jam", "Tribes", "Unity", "C#", "Team"],
+    source: "https://discord.gg/Js4aU8DSnQ",
+    visit: "https://store.steampowered.com/app/3551950/Tribes/",
+    playtitle: "Play the Demo!",
+    extratitle: "Join the discord!",
+    currentProject: true,
+    id: -1,
+  },
+  {
     title: "MCSR Dashboard",
     description:
       "A stats dashboard for tracking ranked runs, Elo changes, PB progress, and recent performance over time.",
@@ -12,16 +25,13 @@ export const projects = [
     id: 11,
   },
   {
-    title: "Tribes",
-    description:
-      "Tribes is a real-time strategy game where you build, battle, and survive against rival clans in a dynamic world of shifting dangers and opportunities.",
-    image: "/images/Tribes.jpg",
-    tags: ["Game Jam", "Tribes", "Unity", "C#", "Team"],
-    source: "https://discord.gg/Js4aU8DSnQ",
-    visit: "https://store.steampowered.com/app/3551950/Tribes/",
-    playtitle: "Play the Demo!",
-    extratitle: "Join the discord!",
-    currentProject: true,
+    title: "Chromask",
+    description: "Three masks, one level at a time.",
+    image: "/images/Chromask.png",
+    tags: ["Game Jam", "Puzzle", "Unity", "C#", "Team"],
+    source: "https://github.com/F1nndegamer/WMJ25",
+    visit: "https://f1nndegamer.itch.io/chromask",
+    playtitle: "Play the game",
     id: -1,
   },
   {
