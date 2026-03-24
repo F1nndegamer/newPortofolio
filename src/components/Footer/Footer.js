@@ -22,7 +22,7 @@ const Footer = () => {
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
           <LinkItem href="tel:+31630689878">
-            +31630689878 (Send a voicemail, I don't pick up random calls :)
+            +31630689878 (Send a voicemail:)
           </LinkItem>
         </LinkColumn>
         <LinkColumn>
