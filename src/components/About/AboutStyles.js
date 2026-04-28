@@ -36,14 +36,17 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const AboutImage = styled.img`
+export const AboutImage = styled.div`
+  position: relative;
   width: 100%;
   max-width: 400px;
-  height: auto;
+  height: 400px;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   
   @media ${(props) => props.theme.breakpoints.sm} {
     max-width: 300px;
+    height: 300px;
   }
 `;

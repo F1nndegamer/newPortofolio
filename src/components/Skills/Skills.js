@@ -19,7 +19,7 @@ export const skillsData = [
     skills: [
       {
         name: "Unity",
-        description: "The Game Engine I use 90% of the time, for more then 3 years",
+        description: "The game engine I use 90% of the time, for more than 3 years",
       },
       {
         name: "C# Programming",

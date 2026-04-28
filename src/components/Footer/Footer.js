@@ -5,6 +5,7 @@ import { SiItchdotio, SiGoogleplay } from "react-icons/si";
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
   CompanyContainer,
+  FooterLinks,
   FooterWrapper,
   LinkColumn,
   LinkItem,
@@ -40,7 +41,7 @@ const Footer = () => {
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Making games, both educative and funny</Slogan>
+          <Slogan>Making games, both educational and fun</Slogan>
         </CompanyContainer>
         <SocialContainer>
           <SocialIcons href="https://github.com/F1nndegamer">
@@ -54,6 +55,15 @@ const Footer = () => {
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>
+      <LinkList>
+        <LinkColumn>
+          <LinkTitle>Profiles</LinkTitle>
+          <FooterLinks href="https://github.com/F1nndegamer">GitHub Profile</FooterLinks>
+          <FooterLinks href="https://f1nndegamer.itch.io">Itch.io Profile</FooterLinks>
+          <FooterLinks href="https://discord.com/users/768028545900871680">Discord Profile</FooterLinks>
+          <FooterLinks href="https://play.google.com/store/apps/dev?id=8986304159851913772">Google Play Profile</FooterLinks>
+        </LinkColumn>
+      </LinkList>
     </FooterWrapper>
   );
 };

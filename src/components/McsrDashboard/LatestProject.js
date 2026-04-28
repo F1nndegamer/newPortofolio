@@ -32,7 +32,7 @@ const McsrDashboard = () => (
             I have been really enjoying playing Minecraft Speedrunning, and I
             wanted to create a dashboard to track my runs, rating movement,
             activity trends, and personal milestones in one clean overview. So
-            thats what I did! The dashboard is built with React and still WIP.
+            that's what I did! The dashboard is built with React and still WIP.
           </Description>
           <LinkButton
             href="https://mcsr.f1nn.me"

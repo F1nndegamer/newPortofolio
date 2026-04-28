@@ -11,14 +11,13 @@ import { LeftSection } from "./HeroStyles";
 const Hero = (props) => (
   <Section row nopadding>
     <LeftSection>
-      <SectionTitle main center>
-        Hi, I’m F1nn! <br />
-        Welcome to my Portfolio
+      <SectionTitle main as="h1" center>
+        F1nn – Unity Game Developer Portfolio
       </SectionTitle>
       <SectionText>
-        I'm a unity game developer who loves making games and working with code.
-        This is where I share the stuff I’ve built. Projects, experiments, and
-        more!.
+        My name is Finn Awen Nijpels, also known as F1nn or F1nndegamer. I am
+        a Unity game developer who creates games, prototypes, and game jam
+        projects using Unity and C#.
       </SectionText>
     </LeftSection>
   </Section>

@@ -43,6 +43,11 @@ export const LinkItem = styled.a`
 	}
 `
 
+export const FooterLinks = styled(LinkItem)`
+	margin-bottom: 8px;
+	font-size: 16px;
+`
+
 export const SocialIconsContainer = styled.div`
 max-width: 1040px;
 display: flex;

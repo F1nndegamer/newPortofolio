@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://f1nn.me/sitemap.xml

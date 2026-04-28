@@ -30,7 +30,7 @@ const Header = () => (
           }}
         >
           <Image src="/Icon.svg" alt="Logo" width={48} height={48} />{" "}
-          <Span> F1nn's portofolio</Span>
+          <Span> F1nn's portfolio</Span>
         </a>
       </Link>
     </Div1>

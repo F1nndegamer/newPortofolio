@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Section,
   SectionDivider,
@@ -19,10 +20,9 @@ const About = () => (
     <AboutContainer>
       <AboutText>
         <SectionText>
-          Hey, I’m F1nn! I’m an indie game developer who loves turning small
-          ideas into playable games. I work mostly with Unity and C#, trying to
-          make games with creativity, atmosphere, and little details that make
-          every project feel alive.
+          My name is Finn Awen Nijpels, also known as F1nn or F1nndegamer. I am
+          a Unity game developer who creates experimental games, game jam
+          projects, and prototypes using C# and Unity.
         </SectionText>
         <SectionText>
           I started making games after a friend told me: “Hey, you’re smart,
@@ -40,7 +40,9 @@ const About = () => (
         </SectionText>
       </AboutText>
       <ImageContainer>
-        <AboutImage src="/Boulder.jpg" alt="About me" />
+        <AboutImage>
+          <Image src="/Boulder.jpg" alt="About me" layout="fill" objectFit="cover" loading="lazy" />
+        </AboutImage>
       </ImageContainer>
     </AboutContainer>
   </Section>

@@ -35,8 +35,8 @@ export const projects = [
     id: -1,
   },
   {
-    title: "Beyond the boundries",
-    description: "A VERY bugged out game (Intended)",
+    title: "Beyond the Boundaries",
+    description: "A very bugged-out game, intended.",
     image: "/images/Boundries.png",
     tags: ["Game Jam", "Glitches", "Unity", "C#", "Team"],
     source: "https://github.com/F1nndegamer/Beyond-The-Boundries",
@@ -157,7 +157,7 @@ export const projects = [
     id: 8,
   },
   {
-    title: "Portofolio",
+    title: "Portfolio",
     description:
       "The website you are currently on, made with React and Next.js. This is the first time making a website with these frameworks.",
     image: "",
@@ -170,7 +170,7 @@ export const projects = [
   {
     title: "Stellar Echoes",
     description:
-      "AI DISCLAMER: This is the first time I used AI to make a project, and it was... interesting. And it will probably be the last time. It is a website to share my quotes.",
+      "AI DISCLAIMER: This is the first time I used AI to make a project, and it was... interesting. It will probably be the last time. It is a website to share my quotes.",
     image: "",
     tags: ["Hardware", "USB", "Design", "Electronics"],
     source: "https://github.com/F1nndegamer/Quote",
