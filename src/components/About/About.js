@@ -41,7 +41,13 @@ const About = () => (
       </AboutText>
       <ImageContainer>
         <AboutImage>
-          <Image src="/Boulder.jpg" alt="About me" layout="fill" objectFit="cover" loading="lazy" />
+          <Image
+            src="/Boulder.jpg"
+            alt="About me"
+            layout="fill"
+            objectFit="cover"
+            loading="lazy"
+          />
         </AboutImage>
       </ImageContainer>
     </AboutContainer>
