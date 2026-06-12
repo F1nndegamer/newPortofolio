@@ -26,6 +26,56 @@ const parseQuoteLine = (line) => {
     return null;
   }
 
+  if (trimmedLine.startsWith('"')) {
+    let quoteText = "";
+    let cursor = 1;
+
+    while (cursor < trimmedLine.length) {
+      const currentCharacter = trimmedLine[cursor];
+
+      if (currentCharacter === '"' && trimmedLine[cursor + 1] === '"') {
+        quoteText += '"';
+        cursor += 2;
+        continue;
+      }
+
+      if (currentCharacter === '"') {
+        break;
+      }
+
+      quoteText += currentCharacter;
+      cursor += 1;
+    }
+
+    if (trimmedLine[cursor] !== '"') {
+      return null;
+    }
+
+    const remainder = trimmedLine.slice(cursor + 1).trim();
+
+    if (!remainder.startsWith(",")) {
+      return null;
+    }
+
+    const fields = remainder
+      .slice(1)
+      .split(",")
+      .map((field) => field.trim());
+
+    if (fields.length < 2) {
+      return null;
+    }
+
+    const year = fields.pop();
+    const writer = fields.join(",").trim();
+
+    if (!quoteText.trim() || !writer || !year) {
+      return null;
+    }
+
+    return { text: quoteText.trim(), writer, year };
+  }
+
   const segments = trimmedLine.split(",");
 
   if (segments.length < 3) {

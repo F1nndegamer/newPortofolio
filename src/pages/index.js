@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>F1nn (Finn Awen Nijpels) – Unity Game Developer Portfolio</title>
+        <title>F1nn's (Finn Awen Nijpels's) Portfolio</title>
         <meta
           name="description"
           content="Portfolio of F1nn (Finn Awen Nijpels), a Unity game developer creating games and prototypes using Unity and C#."
@@ -27,7 +27,7 @@ const Home = () => {
         />
         <link rel="canonical" href="https://f1nn.me" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="F1nn – Unity Game Developer Portfolio" />
+        <meta property="og:title" content="F1nn's Portfolio" />
         <meta
           property="og:description"
           content="Games, prototypes, and projects made with Unity and C#."
