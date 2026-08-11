@@ -14,7 +14,7 @@ import {
 } from "./HeroStyles";
 
 const defaultQuote = {
-  text: "Small, steady progress beats waiting for the perfect moment.",
+  text: "I dont have a quote...",
   writer: "F1nn",
   year: "2026",
 };

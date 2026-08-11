@@ -13,7 +13,7 @@ export const projects = [
     id: -1,
   },
   {
-    title: "MCSR Dashboard",
+    title: "MCSR Ranked Dashboard",
     description:
       "A stats dashboard for tracking ranked runs, Elo changes, PB progress, and recent performance over time.",
     image: "/images/nether-bg.webp",
@@ -175,7 +175,7 @@ export const projects = [
     tags: ["Hardware", "USB", "Design", "Electronics"],
     source: "https://github.com/F1nndegamer/Quote",
     visit: "https://quote.f1nn.me/",
-    playtitle: "Add your quotes!",
+    playtitle: "See my quotes!",
     id: 10,
   },
 ];

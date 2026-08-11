@@ -1,13 +1,8 @@
 import Head from 'next/head';
-
-import Acomplishments from '../components/Acomplishments/Acomplishments';
 import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
-import Technologies from '../components/Technologies/Technologies';
-import Timeline from '../components/TimeLine/TimeLine';
 import About from '../components/About/About';
-import McsrDashboard from '../components/McsrDashboard/LatestProject';
 import Skills from '../components/Skills/Skills';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
@@ -16,14 +11,14 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>F1nn's (Finn Awen Nijpels's) Portfolio</title>
+        <title>Awen's Portfolio</title>
         <meta
           name="description"
-          content="Portfolio of F1nn (Finn Awen Nijpels), a Unity game developer creating games and prototypes using Unity and C#."
+          content="Portfolio of Awen, I'm mostly a Unity game developer creating games using Unity"
         />
         <meta
           name="keywords"
-          content="F1nn, Finn, Finn Awen Nijpels, F1nndegamer, Unity developer, game developer, Unity portfolio, indie game developer"
+          content="F1nn, Finn, Finn Awen Nijpels, F1nndegamer, Unity developer, game developer, Unity portfolio, indie game developer, Awen"
         />
         <link rel="canonical" href="https://f1nn.me" />
         <meta name="robots" content="index, follow" />
@@ -42,7 +37,6 @@ const Home = () => {
            <BgAnimation />
         </Section>
         <About />
-        <McsrDashboard />
         <Projects />
         <Skills />
       </Layout>

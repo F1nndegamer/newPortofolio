@@ -18,8 +18,8 @@ const getProjectActionText = ({ title, playtitle, visit }) => {
     return `Find ${title} on Google Play`;
   }
 
-  if (title === 'MCSR Dashboard') {
-    return 'Open the MCSR Dashboard project';
+  if (title === 'MCSR Ranked Dashboard') {
+    return 'Open Ranked Dashboard';
   }
 
   if (title === 'Portfolio') {
@@ -31,7 +31,6 @@ const getProjectActionText = ({ title, playtitle, visit }) => {
 
 const Projects = () => (
   <Section nopadding id="projects">
-    <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
       {projects.map(
@@ -61,11 +60,6 @@ const Projects = () => (
             <CardInfo>{description}</CardInfo>
             <div>
               <TitleContent topPadding="10px"></TitleContent>
-              <TagList>
-                {tags.map((tag, i) => (
-                  <Tag key={i}>{tag}</Tag>
-                ))}
-              </TagList>
             </div>
             <UtilityList>
               <ExternalLinks href={source}>{extratitle}</ExternalLinks>

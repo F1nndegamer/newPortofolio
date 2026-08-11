@@ -15,7 +15,6 @@ import {
 
 const About = () => (
   <Section id="about">
-    <SectionDivider />
     <SectionTitle main>About Me</SectionTitle>
     <AboutContainer>
       <AboutText>

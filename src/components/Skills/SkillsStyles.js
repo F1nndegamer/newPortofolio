@@ -36,9 +36,8 @@ export const SkillCategoryTitle = styled.h3`
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
-  color: #FFFFFF;
   margin-bottom: 16px;
-  background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.8) 60.15%);
+  background: #ffffff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
