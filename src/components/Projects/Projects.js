@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img, CurrentProjectBadge } from './ProjectsStyles';
-import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, TitleContent, UtilityList, Img, CurrentProjectBadge, ViewMoreButton, ViewMoreWrapper } from './ProjectsStyles';
+import { Section, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/ProjectsData';
+
+const INITIAL_ROWS = 2;
+const ROWS_PER_CLICK = 2;
 
 const getProjectActionText = ({ title, playtitle, visit }) => {
   if (playtitle && !/^Play the game$/i.test(playtitle) && !/^Find it on google play!$/i.test(playtitle) && !/^Open project$/i.test(playtitle) && !/^Check it out!$/i.test(playtitle)) {
@@ -29,11 +32,49 @@ const getProjectActionText = ({ title, playtitle, visit }) => {
   return `Play ${title}`;
 };
 
-const Projects = () => (
-  <Section nopadding id="projects">
-    <SectionTitle main>Projects</SectionTitle>
-    <GridContainer>
-      {projects.map(
+const Projects = () => {
+  const gridRef = useRef(null);
+  const [rowsVisible, setRowsVisible] = useState(INITIAL_ROWS);
+  const [cardsPerRow, setCardsPerRow] = useState(1);
+
+  useEffect(() => {
+    const updateCardsPerRow = () => {
+      setCardsPerRow(2);
+    };
+
+    updateCardsPerRow();
+
+    const observer = new ResizeObserver(() => {
+      updateCardsPerRow();
+    });
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    window.addEventListener('resize', updateCardsPerRow);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateCardsPerRow);
+    };
+  }, []);
+
+  const visibleCount = useMemo(() => {
+    return Math.min(projects.length, rowsVisible * cardsPerRow);
+  }, [rowsVisible, cardsPerRow]);
+
+  const visibleProjects = useMemo(() => {
+    return projects.slice(0, visibleCount);
+  }, [visibleCount]);
+
+  const hasMoreProjects = visibleCount < projects.length;
+
+  return (
+    <Section nopadding id="projects">
+      <SectionTitle main>Projects</SectionTitle>
+      <GridContainer ref={gridRef}>
+        {visibleProjects.map(
         ({
           id,
           image,
@@ -46,7 +87,7 @@ const Projects = () => (
           extratitle = "Code",
           currentProject = false,
         }) => (
-          <BlogCard key={id} currentProject={currentProject}>
+          <BlogCard key={`${id}-${title}`} currentProject={currentProject}>
             {currentProject && <CurrentProjectBadge>Current Project</CurrentProjectBadge>}
             {image && (
               <Img>
@@ -68,7 +109,16 @@ const Projects = () => (
           </BlogCard>
         )
       )}
-    </GridContainer>
-  </Section>
-);
+      </GridContainer>
+      {hasMoreProjects && (
+        <ViewMoreWrapper>
+          <ViewMoreButton type="button" onClick={() => setRowsVisible((prev) => prev + ROWS_PER_CLICK)}>
+            Show more v
+          </ViewMoreButton>
+        </ViewMoreWrapper>
+      )}
+    </Section>
+  );
+};
+
 export default Projects;
