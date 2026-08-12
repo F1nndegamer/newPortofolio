@@ -140,7 +140,7 @@ export const ViewMoreWrapper = styled.div`
 export const ViewMoreButton = styled.button`
   border: 0;
   background: transparent;
-  color: #b6c0ea;
+  color: #FFFF;
   font-size: 1.45rem;
   font-weight: 500;
   padding: 0.35rem 0.5rem;
@@ -151,7 +151,9 @@ export const ViewMoreButton = styled.button`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.32rem;
-
+  @media ${(props) => props.theme.breakpoints.sm} {
+    transform: translateY(15px);
+  }
   &:hover {
     color: #ffffff;
     transform: translateY(-1px);

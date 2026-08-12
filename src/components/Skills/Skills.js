@@ -73,7 +73,7 @@ export const skillsData = [
 
 const Skills = () => (
   <Section id="skills">
-    <SectionTitle main>My Skills</SectionTitle>
+    <SectionTitle skills>My Skills</SectionTitle>
     <SectionText>
       Here are the most important skills I got over the years.
     </SectionText>
