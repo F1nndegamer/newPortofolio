@@ -35,7 +35,7 @@ export const SectionTitle = styled.h2`
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
   padding: ${(props) => props.main ? '58px 0 16px' : '0'};
-
+  
   @media ${props => props.theme.breakpoints.md}{
     font-size: ${(props) => props.main ? '56px' : '48px'};
     line-height: ${(props) => props.main ? '56px' : '48px'};
@@ -51,6 +51,8 @@ export const SectionTitle = styled.h2`
     margin-bottom: 8px;
     padding: ${(props) => props.main ? '16px 0 8px' : '0'};
     max-width: 100%;
+    margin: 0 auto 8px;
+    text-align: center;
   }
 `
 
