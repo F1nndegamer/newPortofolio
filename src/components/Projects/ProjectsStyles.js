@@ -150,12 +150,8 @@ export const ViewMoreButton = styled.button`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.32rem;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    transform: translateY(15px);
-    &:hover {
-    transform: translateY(15px);
-  }
-  }
+ 
+  
   &:hover {
     color: #ffffff;
     transform: translateY(-1px);
@@ -166,4 +162,10 @@ export const ViewMoreButton = styled.button`
     outline-offset: 3px;
     border-radius: 4px;
   }
+   @media ${(props) => props.theme.breakpoints.sm} {
+    transform: translateY(15px);
+    &:hover {
+    transform: translateY(15px);
+  }
+}
 `;
