@@ -32,7 +32,7 @@ export const ImageContainer = styled.div`
   align-items: center;
   
   @media ${(props) => props.theme.breakpoints.md} {
-    order: 1;
+    order: 2;
   }
 `;
 
@@ -46,7 +46,7 @@ export const AboutImage = styled.div`
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   
   @media ${(props) => props.theme.breakpoints.sm} {
-    max-width: 300px;
+    max-width: 400px;
     height: 300px;
   }
 `;
