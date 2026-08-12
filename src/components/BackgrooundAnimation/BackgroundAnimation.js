@@ -1,19 +1,21 @@
 import React from "react";
 
 const BackgroundAnimation = () => (
+  <>
   <div
+    className="background-animation"
     aria-hidden="true"
-    style={{
-      position: "absolute",
-      top: "0px",
-      right: "-440px",
-      width: "120%",
-      maxWidth: "6400px",
-      height: "120%",
-      maxHeight: "6400px",
-      pointerEvents: "none",
-      zIndex: 0,
-    }}
+  style={{
+    position: "absolute",
+    top: "0px",
+    right: "-440px",
+    width: "120%",
+    maxWidth: "6400px",
+    height: "120%",
+    maxHeight: "6400px",
+    pointerEvents: "none",
+    zIndex: 0,
+  }}
   >
     <svg
       className="BgAnimation__svg"
@@ -374,6 +376,14 @@ const BackgroundAnimation = () => (
       </defs>
     </svg>
   </div>
+  <style jsx>{`
+  @media (max-width: 768px) {
+    .background-animation {
+      display: none;
+    }
+  }
+  `}</style>
+  </>
 );
 
 export default BackgroundAnimation;

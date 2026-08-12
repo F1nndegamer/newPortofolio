@@ -14,6 +14,7 @@ import {
   ReportBugButton,
   SocialIcons,
   Span,
+  Img,
   
 } from "./HeaderStyles";
 
@@ -29,8 +30,10 @@ const Header = () => (
             marginBottom: "20px",
           }}
         >
-          <Image src="/Icon.svg" alt="Logo" width={48} height={48} />{" "}
-          <Span> F1nn's portfolio</Span>
+          <Img>
+            <Image src="/Icon.svg" alt="Logo" width={48} height={48} />{" "}
+          </Img>
+          <Span> Awen's portfolio</Span>
         </a>
       </Link>
     </Div1>

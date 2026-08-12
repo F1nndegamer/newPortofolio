@@ -10,9 +10,8 @@ export const Container = styled.div`
   padding-top: 2rem;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
+    grid-template-rows: auto auto;
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
   }
@@ -23,8 +22,6 @@ export const Span = styled.span`
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
-  flex-direction: row;
-  align-content: center;
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 1 / 1 / 2 / 3;
   }
@@ -33,16 +30,27 @@ export const Div2 = styled.div`
   margin-top: 10px;
   grid-area: 1 / 2 / 2 / 4;
   display: flex;
-  justify-content: center; /* center everything */
-  gap: 3rem; /* space between elements */
-  margin-left: auto; /* center on X */
+  justify-content: center;
+  gap: 3rem;
+  margin-left: auto;
   margin-right: auto;
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
-  }
+ @media ${(props) => props.theme.breakpoints.sm} {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  margin-top: -5px;
+  margin-bottom: -20px;
+}
 `;
 
+export const Img = styled.div`
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: none
+  }
+`;
 
 export const Div3 = styled.div`
   margin-top: -10px;
@@ -51,8 +59,11 @@ export const Div3 = styled.div`
   justify-content: space-around;
   align-items: center;
   @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
     grid-area: 1 / 4 / 2 / 6;
+    margin-top: -15px;
+    margin-left: 0;
+    justify-content: flex-end;
+    align-items: center;
   }
 `;
 // Navigation Links
@@ -72,34 +83,6 @@ export const NavLink = styled.a`
 `;
 
 
-/// DropDown Contact
-export const ContactDropDown = styled.button`
-  border: none;
-  display: flex;
-  position: relative;
-  background: none;
-  font-size: 1.7rem;
-
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    color: #fff;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.4rem 0;
-  }
-  @media ${(props) => props.theme.breakpoints.md} {
-    padding: 0;
-  }
-`;
-
 export const NavProductsIcon = styled(IoIosArrowDropdown)`
   margin-left: 8px;
   display: flex;
@@ -118,7 +101,6 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   }
 `;
 
-// Social Icons
 
 export const SocialIcons = styled.a`
   display: flex;
@@ -133,12 +115,11 @@ export const SocialIcons = styled.a`
   }
 `;
 export const ReportBugButton = styled(SocialIcons)`
-  margin-left: 15px;
+  white-space: nowrap;
   display: flex;
-  align-items: right; // vertical centering
-  justify-content: center; // horizontal centering
-  height: 3rem; // match your other icons
-  line-height: 1; // ensures vertical centering
-  padding: 0 8px; // optional horizontal padding
+  justify-content: center;
+  height: 1.4rem;
+  line-height: 1;
+  padding: 0 8px;
 `;
 
