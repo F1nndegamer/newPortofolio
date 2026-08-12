@@ -37,6 +37,14 @@ const About = () => (
           printing. I’m always up for learning new things and collaborating with
           others!
         </SectionText>
+        <SectionText>
+          I'm non-binary, specifically aporagender/Maverique (third gender), and I use they/them pronouns. I’m also berrisexual.
+        </SectionText>
+        <SectionText>
+          Musically, I recently got a piano and have playing a bit.
+          I’ve been playing ukulele for about a year and also play a bit of
+          guitar. I don't yet, but I would love to make some music for a game.
+        </SectionText>
       </AboutText>
       <ImageContainer>
         <AboutImage>
