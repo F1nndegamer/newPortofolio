@@ -20,7 +20,7 @@ const About = () => (
       <AboutText>
         <SectionText>
           My name is Finn Awen Nijpels, also known as F1nn or F1nndegamer. I am
-          a Unity game developer who creates experimental games, game jam
+          a Unity game developer who creates games, game jam
           projects, and prototypes using C# and Unity.
         </SectionText>
         <SectionText>
@@ -28,7 +28,7 @@ const About = () => (
           make a game!” After some time, I decided to fully focus on game
           development, and in July 2022 I released my first project. Since then,
           building games has become my favorite way to tell stories, solve
-          problems, and experiment with new mechanics through jams and quick
+          problems, and experiment with mechanics through jams and quick
           prototypes.
         </SectionText>
         <SectionText>
@@ -38,7 +38,7 @@ const About = () => (
           others!
         </SectionText>
         <SectionText>
-          I'm non-binary, specifically aporagender/Maverique (third gender), and I use they/them pronouns. I’m also berrisexual.
+          I'm non-binary, specifically aporagender/Maverique (third gender), and I use they/them pronouns.
         </SectionText>
         <SectionText>
           Musically, I recently got a piano and have playing a bit.
