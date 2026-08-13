@@ -39,7 +39,7 @@ const Projects = () => {
 
   useEffect(() => {
     const updateCardsPerRow = () => {
-      setCardsPerRow(2);
+      setCardsPerRow(window.matchMedia('(max-width: 640px)').matches ? 1 : 2);
     };
 
     updateCardsPerRow();

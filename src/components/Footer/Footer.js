@@ -23,7 +23,7 @@ const Footer = () => {
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
           <LinkItem href="tel:+31630689878">
-            +31630689878 (Send a voicemail:)
+            +31630689878 <br/> (Send a voicemail:)
           </LinkItem>
         </LinkColumn>
         <LinkColumn>
@@ -55,15 +55,6 @@ const Footer = () => {
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>
-      <LinkList>
-        <LinkColumn>
-          <LinkTitle>Profiles</LinkTitle>
-          <FooterLinks href="https://github.com/F1nndegamer">GitHub Profile</FooterLinks>
-          <FooterLinks href="https://f1nndegamer.itch.io">Itch.io Profile</FooterLinks>
-          <FooterLinks href="https://discord.com/users/768028545900871680">Discord Profile</FooterLinks>
-          <FooterLinks href="https://play.google.com/store/apps/dev?id=8986304159851913772">Google Play Profile</FooterLinks>
-        </LinkColumn>
-      </LinkList>
     </FooterWrapper>
   );
 };
