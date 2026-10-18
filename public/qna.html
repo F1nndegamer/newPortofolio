@@ -311,6 +311,159 @@
       footer a {
         color: var(--a2);
       }
+      .suggest {
+        background: var(--cs);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 18px 16px;
+        margin: 24px 0 8px;
+      }
+      .suggest h2 {
+        margin: 0 0 4px;
+        font-size: 17px;
+        color: var(--hd);
+      }
+      .suggest p.sub {
+        margin: 0 0 14px;
+        color: var(--mut);
+        font-size: 13px;
+      }
+      .suggest .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .suggest input[type="text"] {
+        flex: 1;
+        min-width: 160px;
+        padding: 11px 14px;
+        border-radius: 4px;
+        border: 1px solid var(--bd);
+        background: var(--an);
+        color: var(--tx);
+        font: inherit;
+      }
+      .suggest textarea {
+        width: 100%;
+        min-height: 84px;
+        padding: 11px 14px;
+        border-radius: 4px;
+        border: 1px solid var(--bd);
+        background: var(--an);
+        color: var(--tx);
+        font: inherit;
+        resize: vertical;
+        margin: 10px 0;
+      }
+      .suggest input:focus,
+      .suggest textarea:focus {
+        outline: 2px solid var(--a1);
+        outline-offset: 1px;
+      }
+      .suggest .hp {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .suggest .msg {
+        min-height: 20px;
+        margin: 8px 0 0;
+        font-size: 13px;
+        color: var(--a2);
+      }
+      .suggest .msg.err {
+        color: #d99;
+      }
+      .community {
+        margin-top: 14px;
+      }
+      .community h2 {
+        font-size: 20px;
+        color: var(--hd);
+        margin: 18px 0 10px;
+      }
+      .community h2 span {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--mut);
+        background: var(--an);
+        border-radius: 4px;
+        padding: 2px 9px;
+        margin-left: 8px;
+      }
+      .community .csec {
+        background: var(--cs);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 14px;
+        margin-bottom: 12px;
+      }
+      .community .cq {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        color: var(--tx);
+        font: inherit;
+        padding: 8px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .community .cq:hover,
+      .community .cq:focus-visible {
+        background: var(--an);
+        outline: none;
+      }
+      .community .cq b {
+        flex: none;
+        min-width: 30px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--a2);
+        background: var(--an);
+        border-radius: 4px;
+        padding: 3px 0;
+        margin-top: 1px;
+      }
+      .community .cq.open b {
+        background: var(--a1);
+        color: #fff;
+      }
+      .community .cq s {
+        margin-left: auto;
+        text-decoration: none;
+        color: var(--mut);
+        transition: transform 0.2s;
+      }
+      .community .cq.open s {
+        transform: rotate(90deg);
+      }
+      .community .ca {
+        display: none;
+        margin: 0 6px 8px 46px;
+        padding: 10px 12px;
+        background: var(--an);
+        border-radius: 4px;
+        border-left: 3px solid var(--a1);
+        font-size: 14px;
+        white-space: pre-line;
+      }
+      .community .ca.show {
+        display: block;
+      }
+      .community .ca i {
+        display: block;
+        color: var(--mut);
+        font-size: 12px;
+        margin-top: 6px;
+        white-space: normal;
+      }
     </style>
   </head>
   <body>
@@ -343,6 +496,26 @@
       </header>
       <div class="grid" id="grid"></div>
       <div class="empty" id="empty">No questions match that search.</div>
+      <section class="suggest" id="suggest">
+        <h2>Got a question for me?</h2>
+        <p class="sub">
+          Ask your own — I'll review suggestions and answer the best ones.
+          Answered ones show up in Community Questions below.
+        </p>
+        <form id="qform">
+          <div class="row">
+            <input type="text" id="qname" maxlength="40" placeholder="Your name (optional)" autocomplete="nickname" />
+            <input type="text" id="qwebsite" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </div>
+          <textarea id="qtext" maxlength="500" placeholder="Type your question…" required></textarea>
+          <button class="btn" type="submit" id="qsend">Send question</button>
+          <p class="msg" id="qmsg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="community" id="community" hidden>
+        <h2>Community Questions<span id="ccount">0</span></h2>
+        <div id="clist"></div>
+      </section>
     </div>
     <footer>
       <p>Making games, both educational and fun</p>
@@ -396,7 +569,7 @@
         27: "Yeah, but asking someone out is genuinely terrifying",
         28: "Smiling, Kindness, intelligence, being genuine, and someone who's passionate about their interests",
         29: "Dishonesty, being unnecessarily mean, and people who make others feel like a burden",
-        30: "Outdated by the time you read this, but I still love my ex (He's Aro and knows I still love him) but we are still good friends",
+        30: "Yes",
         31: "HOW AM I SUPPOSED TO KNOW LMAO, not that I know of (I suck at reading signs)",
         32: "Not Lip to Lip",
         33: "A few not really close friends and a bunch of pretty good online friends",
@@ -425,7 +598,7 @@
         52: "Nope",
 
         // Experience
-        53: "Sexual experience? Hell nahw.",
+        53: "Sexual experience? Hell nahw. But I have had a same-sex romantic experience",
         54: "Probably one of those random late-night conversations with a friend that somehow becomes a core memory",
         55: "Probably something stupid I did in public that randomly comes back to haunt me at 3 AM. Like I just dead-named myself under 0 pressure",
         56: "Nope",
@@ -435,7 +608,7 @@
         60: "No serious and physical ones",
         61: "No actually! I have had like 4 am nights because of game jams though",
         62: "Probably something with a horrible texture",
-        63: "I have gone to Finland :)",
+        63: "I have been to Finland :)",
         64: "Probably a vacation somewhere with nice nature and no responsibilities, preferably at home aswell",
         65: "Nope, too expensive and time intensive",
         66: "I have met Feinberg :D",
@@ -828,6 +1001,91 @@
         qs.forEach((q) => (q.a.style.display = ""));
         this.textContent = all ? "Collapse all" : "Expand all";
       };
+
+      // ---- Suggest a question + Community Questions ----
+      const API = "https://calendar.f1nn.me/qna-api";
+      const qform = document.getElementById("qform");
+      const qmsg = document.getElementById("qmsg");
+      const qsend = document.getElementById("qsend");
+
+      qform.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const question = document.getElementById("qtext").value.trim();
+        const name = document.getElementById("qname").value.trim();
+        const website = document.getElementById("qwebsite").value;
+        if (question.length < 3) {
+          qmsg.textContent = "Please type a slightly longer question.";
+          qmsg.classList.add("err");
+          return;
+        }
+        qsend.disabled = true;
+        qmsg.classList.remove("err");
+        qmsg.textContent = "Sending…";
+        try {
+          const res = await fetch(API + "/suggest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question, name, website }),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && data.ok) {
+            qmsg.textContent = "Thanks! Your question was sent for review.";
+            qform.reset();
+          } else if (res.status === 429) {
+            qmsg.textContent = data.error || "Too many submissions — try again in a minute.";
+            qmsg.classList.add("err");
+          } else {
+            qmsg.textContent = data.error || "Something went wrong. Try again later.";
+            qmsg.classList.add("err");
+          }
+        } catch (err) {
+          qmsg.textContent = "Could not reach the server. Try again later.";
+          qmsg.classList.add("err");
+        } finally {
+          qsend.disabled = false;
+        }
+      });
+
+      // Load answered community questions
+      (async () => {
+        try {
+          const res = await fetch(API + "/questions?status=answered");
+          if (!res.ok) return;
+          const list = await res.json();
+          if (!Array.isArray(list) || list.length === 0) return;
+          const section = document.getElementById("community");
+          const clist = document.getElementById("clist");
+          document.getElementById("ccount").textContent = list.length;
+          list.forEach((item) => {
+            const wrap = document.createElement("div");
+            wrap.className = "csec";
+            const btn = document.createElement("button");
+            btn.className = "cq";
+            btn.type = "button";
+            btn.setAttribute("aria-expanded", "false");
+            btn.innerHTML = "<b>" + item.id + "</b>";
+            btn.appendChild(document.createTextNode(item.question));
+            btn.insertAdjacentHTML("beforeend", "<s>›</s>");
+            const ans = document.createElement("div");
+            ans.className = "ca";
+            ans.textContent = item.answer || "No answer yet.";
+            const meta = document.createElement("i");
+            meta.textContent = "asked by " + (item.name || "Anonymous");
+            ans.appendChild(meta);
+            btn.addEventListener("click", () => {
+              const open = !ans.classList.contains("show");
+              ans.classList.toggle("show", open);
+              btn.classList.toggle("open", open);
+              btn.setAttribute("aria-expanded", open);
+            });
+            wrap.append(btn, ans);
+            clist.appendChild(wrap);
+          });
+          section.hidden = false;
+        } catch (err) {
+          /* API unreachable — community section stays hidden */
+        }
+      })();
     </script>
   </body>
 </html>
