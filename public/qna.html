@@ -499,21 +499,39 @@
       <section class="suggest" id="suggest">
         <h2>Got a question for me?</h2>
         <p class="sub">
-          Ask your own — I'll review suggestions and answer the best ones.
-          Answered ones show up in Community Questions below.
+          Did I forget something? Ask it here! Answered ones show up in
+          Questions box below.
         </p>
         <form id="qform">
           <div class="row">
-            <input type="text" id="qname" maxlength="40" placeholder="Your name (optional)" autocomplete="nickname" />
-            <input type="text" id="qwebsite" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input
+              type="text"
+              id="qname"
+              maxlength="40"
+              placeholder="Your name (optional)"
+              autocomplete="nickname"
+            />
+            <input
+              type="text"
+              id="qwebsite"
+              class="hp"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
           </div>
-          <textarea id="qtext" maxlength="500" placeholder="Type your question…" required></textarea>
+          <textarea
+            id="qtext"
+            maxlength="500"
+            placeholder="Type your question…"
+            required
+          ></textarea>
           <button class="btn" type="submit" id="qsend">Send question</button>
           <p class="msg" id="qmsg" role="status" aria-live="polite"></p>
         </form>
       </section>
       <section class="community" id="community" hidden>
-        <h2>Community Questions<span id="ccount">0</span></h2>
+        <h2>Other Questions<span id="ccount">0</span></h2>
         <div id="clist"></div>
       </section>
     </div>
@@ -1032,10 +1050,12 @@
             qmsg.textContent = "Thanks! Your question was sent for review.";
             qform.reset();
           } else if (res.status === 429) {
-            qmsg.textContent = data.error || "Too many submissions — try again in a minute.";
+            qmsg.textContent =
+              data.error || "Too many submissions — try again in a minute.";
             qmsg.classList.add("err");
           } else {
-            qmsg.textContent = data.error || "Something went wrong. Try again later.";
+            qmsg.textContent =
+              data.error || "Something went wrong. Try again later.";
             qmsg.classList.add("err");
           }
         } catch (err) {
