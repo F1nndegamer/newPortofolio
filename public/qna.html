@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Q&amp;A with Awen · The Number Game</title>
+    <style>
+      :root {
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        --bg: #0c0d14;
+        --bg2: #171a2b;
+        --card: #14162280;
+        --cs: #161828;
+        --tx: #e7e9f3;
+        --mut: #9094ad;
+        --hd: #fff;
+        --bd: #262a42;
+        --a1: #7c7c7c;
+        --a2: #b0b0b0;
+        --an: #0f1120;
+      }
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) {
+          --bg: #f4f5fb;
+          --bg2: #e6e8f8;
+          --cs: #fff;
+          --tx: #1d2033;
+          --mut: #666b85;
+          --hd: #10122a;
+          --bd: #dcdff0;
+          --a1: #808080;
+          --a2: #b0b0b0;
+          --an: #f0f1fa;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0c0d14;
+        --bg2: #171a2b;
+        --cs: #161828;
+        --tx: #e7e9f3;
+        --mut: #9094ad;
+        --hd: #fff;
+        --bd: #262a42;
+        --a1: #7c7c7c;
+        --a2: #b0b0b0;
+        --an: #0f1120;
+      }
+      html {
+        color-scheme: dark light;
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+        scroll-behavior: smooth;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--tx);
+        font:
+          15px/1.45 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        min-height: 100vh;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      nav {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 18px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--bd);
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 18px;
+        color: var(--hd);
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo i {
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        background: var(--a1);
+        display: inline-block;
+      }
+      nav a.l {
+        padding: 6px 10px;
+        border-radius: 8px;
+        color: var(--mut);
+        font-size: 14px;
+      }
+      nav a.l:hover,
+      nav a.cur {
+        color: var(--hd);
+        background: var(--cs);
+      }
+      .tag a:hover {
+        text-decoration: underline;
+      }
+      footer .so a {
+        margin: 0 8px;
+      }
+      footer p {
+        margin: 0 0 8px;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 18px 50px;
+      }
+      .hero {
+        padding: 46px 0 24px;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--a2);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 4px 12px;
+        background: var(--cs);
+      }
+      h1 {
+        font-size: clamp(30px, 6vw, 52px);
+        line-height: 1.08;
+        margin: 14px 0 10px;
+        color: var(--hd);
+        letter-spacing: -0.02em;
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--a2);
+      }
+      .hero p {
+        max-width: 560px;
+        color: var(--mut);
+        margin: 0;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 22px 0 12px;
+      }
+      .search {
+        flex: 1;
+        min-width: 200px;
+        padding: 12px 14px;
+        border-radius: 4px;
+        border: 1px solid var(--bd);
+        background: var(--cs);
+        color: var(--tx);
+        font: inherit;
+      }
+      .search:focus {
+        outline: 2px solid var(--a1);
+        outline-offset: 1px;
+      }
+      .btn {
+        padding: 11px 16px;
+        border-radius: 4px;
+        border: 1px solid var(--bd);
+        background: var(--cs);
+        color: var(--tx);
+        font: 600 14px inherit;
+        cursor: pointer;
+      }
+      .btn:hover {
+        border-color: var(--a1);
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0 14px;
+        scrollbar-width: none;
+      }
+      .chip {
+        flex: none;
+        padding: 7px 13px;
+        border-radius: 6px;
+        border: 1px solid var(--bd);
+        background: none;
+        color: var(--mut);
+        font: 500 13px inherit;
+        cursor: pointer;
+      }
+      .chip.on {
+        background: var(--a1);
+        color: #fff;
+        border-color: var(--a1);
+      }
+      .grid {
+        columns: 3 300px;
+        column-gap: 16px;
+      }
+      .sec {
+        break-inside: avoid;
+        background: var(--cs);
+        border: 1px solid var(--bd);
+        border-radius: 8px;
+        padding: 16px 14px 10px;
+        margin: 0 0 16px;
+      }
+      .sec h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 4px 8px;
+        font-size: 16px;
+        color: var(--hd);
+      }
+      .sec h2 span {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--mut);
+        background: var(--an);
+        border-radius: 4px;
+        padding: 2px 9px;
+      }
+      .q {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        color: var(--tx);
+        font: inherit;
+        padding: 8px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .q:hover,
+      .q:focus-visible {
+        background: var(--an);
+        outline: none;
+      }
+      .q b {
+        flex: none;
+        min-width: 30px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--a2);
+        background: var(--an);
+        border-radius: 8px;
+        padding: 3px 0;
+        margin-top: 1px;
+      }
+      .q.open b {
+        background: var(--a1);
+        color: #fff;
+      }
+      .q s {
+        margin-left: auto;
+        text-decoration: none;
+        color: var(--mut);
+        transition: transform 0.2s;
+      }
+      .q.open s {
+        transform: rotate(90deg);
+      }
+      .a {
+        display: none;
+        margin: 0 6px 8px 46px;
+        padding: 10px 12px;
+        background: var(--an);
+        border-radius: 4px;
+        border-left: 3px solid var(--a1);
+        font-size: 14px;
+      }
+      .a.show {
+        display: block;
+      }
+      .a i {
+        color: var(--mut);
+      }
+      .empty {
+        text-align: center;
+        color: var(--mut);
+        padding: 40px 0;
+        display: none;
+      }
+      footer {
+        text-align: center;
+        color: var(--mut);
+        font-size: 13px;
+        padding: 10px 18px 30px;
+      }
+      footer a {
+        color: var(--a2);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="https://f1nn.me"><i></i>Awen’s portfolio</a>
+      <a class="l" href="https://f1nn.me">Portfolio</a
+      ><a class="l cur" href="#top" aria-current="page">Q&amp;A</a>
+    </nav>
+    <div class="wrap" id="top">
+      <header class="hero">
+        <span class="tag"
+          ><a href="https://f1nn.me">Portfolio</a> / Q&amp;A · The Number Game
+          3.0</span
+        >
+        <h1>Hi, I’m Awen! <em>Ask me anything.</em></h1>
+        <p>
+          141 questions, one tap each. Pick a number, open it, and see my
+          answer. Updated on 17-10-26 so probably outdated a bit
+        </p>
+        <div class="bar">
+          <input
+            class="search"
+            id="s"
+            type="search"
+            placeholder="Search questions or numbers…"
+            aria-label="Search"
+          /><button class="btn" id="tg">Expand all</button>
+        </div>
+        <div class="chips" id="chips"></div>
+      </header>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty">No questions match that search.</div>
+    </div>
+    <footer>
+      <p>Making games, both educational and fun</p>
+      <p class="so">
+        <a href="https://github.com/F1nndegamer">GitHub</a
+        ><a href="https://f1nndegamer.itch.io">itch.io</a
+        ><a href="https://play.google.com/store/apps/dev?id=8986304159851913772"
+          >Google Play</a
+        >
+      </p>
+      <p>
+        Part of <a href="https://f1nn.me">Awen’s portfolio</a> · Original game
+        by u/Geico2017
+      </p>
+    </footer>
+    <script>
+      // Fill in real answers here by question number, e.g. 1: "16". Empty = lorem ipsum placeholder.
+
+      const ANSWERS = {
+        // The Basics
+        1: "Why do you want to know my age? It depends on who you are to what I answer. DM me if you want to know this one.",
+        2: "I am Non-Binary. Specifically, Maverique.",
+        3: "Around 169 cm",
+        4: "Uhmm Idk like 59kg?",
+        5: "Im from the Netherlands",
+        6: "Aquarius",
+        7: "February 13th",
+        8: "Dutch and English",
+
+        // Hobbies/Favorite Things
+        9: "Dark purple",
+        10: "Tbh I dont have a favorite food, but I enjoy seasoned cauliflower :)",
+        11: "It depends on my mood. My favorite soda is probably sprite, but I love just coffee and my Go-To is usually water",
+        12: "Mostly Game development, bouldering, and aerial silks",
+        13: "Alt-Pop ig?",
+        14: "BoyWithUke/Chandol",
+        15: "What's the rush -Chandol",
+        16: "I don't really like a specific movie, but maybe like the Matrix?",
+        17: "Minecraft orrr Hollow Knight",
+        18: "Again, not really sure. I would say Death Note or Horimiya",
+        19: "Bouldering",
+        20: "Game development",
+        21: "I have an amazing alt + button up androgynous outfit.",
+
+        // Relationships
+        22: "Im Omni-Ace. basically I am attracted to all genders, but I have a preference for feminine and androgynous people. And I am Asexual",
+        23: "Single, just out of my first relationship",
+        24: "Probably someone like Joey King ngl",
+        25: "Someone who's kind, funny, a cat person, and can match my energy while leading the convo. Bonus points if they're feminine/androgynous and have their own nerdy interests",
+        26: "Going on a walk somewhere pretty, like in a deep dark forest, getting food, and then accidentally talking for like 6 hours",
+        27: "Yeah, but asking someone out is genuinely terrifying",
+        28: "Smiling, Kindness, intelligence, being genuine, and someone who's passionate about their interests",
+        29: "Dishonesty, being unnecessarily mean, and people who make others feel like a burden",
+        30: "Outdated by the time you read this, but I still love my ex (He's Aro and knows I still love him) but we are still good friends",
+        31: "HOW AM I SUPPOSED TO KNOW LMAO, not that I know of (I suck at reading signs)",
+        32: "Not Lip to Lip",
+        33: "A few not really close friends and a bunch of pretty good online friends",
+
+        // Internet/Social Media
+        34: "Discord, YouTube, Twitch, Reddit, GitHub, Retro and probably some others. Not TikTok Snapchat and some other popular ones",
+        35: "Usually F1nndegamer, or Awen if it's new, depending on the platform. DM me if you need to know a specific one!",
+        36: "Not that I know off",
+        37: "Discord I think",
+        38: "Twitch probably",
+        39: "Yeah!, some of my online friends are genuinely some of my closest friends",
+        40: "Not that much of the typical social media apps",
+        41: "The Well memes (Well in that case [Image of a well in a briefcase] for example)",
+        42: "Nothing Phone (2a)",
+
+        // Appearance/Looks
+        43: "Dark-Brown",
+        44: "Dutch / European",
+        45: "Brown",
+        46: "Yeah :) I always have some mascara and eyeliner, I'm experimenting with it to look more androgynous/feminine :3",
+        47: "Long",
+        48: "Average ig?",
+        49: "Long, wavy hair, idk im not a hair specialist",
+        50: "Mostly casual clothes, but I LOVE my alt + button up androgynous outfit",
+        51: "Nope, I do want to get an ear piercing soon",
+        52: "Nope",
+
+        // Experience
+        53: "Sexual experience? Hell nahw.",
+        54: "Probably one of those random late-night conversations with a friend that somehow becomes a core memory",
+        55: "Probably something stupid I did in public that randomly comes back to haunt me at 3 AM. Like I just dead-named myself under 0 pressure",
+        56: "Nope",
+        57: "Nope",
+        58: "Not in the form of wine/beer or anyhing else. But I have had alcohol in my body ig",
+        59: "Nothing serious, I have accidentally stolen scissors from a store",
+        60: "No serious and physical ones",
+        61: "No actually! I have had like 4 am nights because of game jams though",
+        62: "Probably something with a horrible texture",
+        63: "I have gone to Finland :)",
+        64: "Probably a vacation somewhere with nice nature and no responsibilities, preferably at home aswell",
+        65: "Nope, too expensive and time intensive",
+        66: "I have met Feinberg :D",
+
+        // Belongings
+        67: "As of 10-17-2026 at 8:18pm, 580 euro",
+        68: "There are a few sentimental things I have. A bracelet made by my ex and a necklace with Lapis Lazuli",
+        69: "Probably my thigh highs (I know I'm weird)",
+        70: "As of 17-10-2026, An ESP32-S3-Touch-7",
+        71: "My PC, probably",
+        72: "My electronics stuff. Being able to make everything you want is cool",
+        73: "Fossiled shark tooth",
+        74: "Vr headset maybe?",
+        75: "Some random electronic component that I bought for a project and haven't used yet",
+        76: "My PC, genuinely one of the most useful things I own",
+        77: "My favorite button-up outfit",
+        78: "Nothing illegal that I know of 💀",
+        79: "A bracelet my best friend(ex) gave to me",
+        80: "Something I bought because I thought I'd use it constantly and then never touched again",
+
+        // Location/House
+        81: "A house",
+        82: "Normal house colors ig?",
+        83: "It has a small boulder wall on the side!!",
+        84: "Small town / suburban area",
+        85: "Big enough for my family and all my stuff",
+        86: "Uhh I don't think so (please dont rob me)",
+        87: "Yeah, thankfully",
+        88: "Having my own space",
+        89: "Probably the fact that there's never enough space for all my projects",
+        90: "Yeah, it's fine",
+        91: "Finland maybe? Or somewhere with a good game dev scene, quiet people and nature",
+        92: "Not really",
+        93: "Uhh, maybe the park?",
+        94: "Yeah, no one knows though (No one knew Ig)",
+
+        // Would You Rather
+        95: "Purple",
+        96: "Neither particularly, but Taylor Swift ig",
+        97: "Marvel",
+        98: "Sour",
+        99: "Cold weather",
+        100: "Winter",
+        101: "Feminine",
+        102: "Movies",
+        103: "PlayStation",
+        104: "Simpsons? Havent watched any of them though",
+
+        // More Would You Rather
+        105: "Cats. No competition",
+        106: "Card games",
+        107: "Inside movies (what does outside movies even mean 😭)",
+        108: "The office (Havent heard of the other one)",
+        109: "Jurassic Park",
+        110: "Universal Studios",
+        111: "The toothpick one. I'd rather get it over with quickly",
+        112: "McDonald's",
+        113: "Comedy",
+        114: "Alternative rock",
+        115: "Harry potter (FUCK JK THOUGH)",
+        116: "Star Wars",
+        117: "Subway",
+        118: "MIND CONTROLL",
+        119: "Juice WRLD",
+        120: "Baseball",
+
+        // Life/School
+        121: "I have 3 cats! Cidhe, Tor and Indy",
+        122: "idk like 20? And I have a brother and 2 parents so 4 in my home family? (Though my brother itsnt home anymore)",
+        123: "IRL? I think like 15 or smt? Not really close though",
+        124: "[Redacted]",
+        125: "A 51 for german (only 2 tests this entire year btw)",
+        126: "I got a 71 for mathemetics (only 2 tests this entire year btw)",
+        127: "Mathemetics tbh",
+        128: "Uhh maybe PE?",
+        129: "My old Math teacher(middle school)",
+        130: "My old English teacher(middle school)",
+        131: "We dont really have colors",
+        132: "We dont have one",
+        133: "Someone got death threats(middle school)",
+        134: "Im in the process of making a hack club!",
+        135: "Bouldering and aerial silks",
+        136: "Nope, I'm busy enough already",
+        137: "No, I get exercise through bouldering and aerial silks",
+        138: "I don't really have one.",
+        139: "No one tbh",
+        140: "Yeah, probably",
+        141: "Yeah, some of my online friends are older than me",
+      };
+
+      const S = [
+        [
+          "The Basics:",
+          [
+            "Age|1",
+            "Gender|1",
+            "Height|2",
+            "Weight|2",
+            "Where are you from|3",
+            "Zodiac Sign|1",
+            "Birthday|3",
+            "Main Language(s)|2",
+          ],
+        ],
+        [
+          "Hobbies/Favorite Things:",
+          [
+            "Favorite Color|1",
+            "Favorite Food|2",
+            "Favorite Drink|2",
+            "Favorite Activity|3",
+            "Favorite Music genre|2",
+            "Favorite Artist|2",
+            "Favorite Song|4",
+            "Favorite Movie|3",
+            "Favorite Video Game (if any)|3",
+            "Favorite TV show|3",
+            "Favorite Sport (if any)|1",
+            "Favorite Hobby|3",
+            "Favorite Outfit|8",
+          ],
+        ],
+        [
+          "Relationships:",
+          [
+            "Sexuality|1",
+            "Relationship Status|2",
+            "Celebrity Crush|2",
+            "Ideal Partner|14",
+            "Ideal Date|14",
+            "Have you asked someone out before|6",
+            "Turn Ons|8",
+            "Turn Offs|8",
+            "Do you have any crushes|8",
+            "Does anyone have a crush on you|8",
+            "Have you had your first kiss|8",
+            "How many friends do you have|3",
+          ],
+        ],
+        [
+          "Internet/Social Media:",
+          [
+            "What social media do you have|6",
+            "What’s your username on each app|10",
+            "Do you follow NSFW pages|4",
+            "Most used Social Media app|2",
+            "Most followed/popular Social Media app|2",
+            "Have you met any friends online|8",
+            "How much do you use Social Media|8",
+            "Favorite Meme|8",
+            "What kind of phone do you have|3",
+          ],
+        ],
+        [
+          "Appearance/Looks:",
+          [
+            "Hair Color|1",
+            "Ethnicity|2",
+            "Eye Color|1",
+            "Do you wear makeup|6",
+            "Hair Length|2",
+            "Body Style|3",
+            "Hair Style|3",
+            "What kind of clothes do you wear|10",
+            "Do you have any piercings|5",
+            "Do you have any tattoos|5",
+          ],
+        ],
+        [
+          "Experience:",
+          [
+            "Have you ever had a same sex experience|6",
+            "Favorite Memory|25",
+            "Most embarrassing moment|25",
+            "Have you ever smoked anything|6",
+            "Have you ever done drugs|6",
+            "Have you ever had alcohol|6",
+            "Have you ever done anything illegal (pirating movies doesn’t count)|10",
+            "Have you ever gotten in a fight|8",
+            "Have you ever pulled an all-nighter|8",
+            "What is the worst thing you’ve ever eaten|10",
+            "How far have you ever travelled from your city/country|8",
+            "Favorite Vacation|12",
+            "Do you have your driver’s license|5",
+            "Most famous person you’ve met|5",
+          ],
+        ],
+        [
+          "Belongings:",
+          [
+            "How much money do you have|3",
+            "Most prized possession|8",
+            "Most embarrassing possesion|8",
+            "What did you buy recently|8",
+            "Most expensive thing you own|6",
+            "Coolest thing you own|8",
+            "Oldest thing you own|6",
+            "Most futuristic possession|6",
+            "Weirdest thing you own|8",
+            "Most useful thing you own|8",
+            "Favorite item of clothing|6",
+            "Most illegal thing you own|6",
+            "Favorite thing you’ve been given as a gift|10",
+            "Least favorite thing you own|8",
+          ],
+        ],
+        [
+          "Location/House:",
+          [
+            "Do you live in a house or an apartment|3",
+            "What color is your house|2",
+            "Cool fact about your house|14",
+            "Do you live in the city or a small town|5",
+            "How big is your house|6",
+            "Do you have cameras around your house|6",
+            "Do you have your own room|8",
+            "Favorite thing about your house|12",
+            "Least favorite thing about your house|12",
+            "Do you like where you live|10",
+            "Where would you move if you had to|8",
+            "Do you live in a dangerous area|8",
+            "Coolest place near your house|8",
+            "Have you ever snuck out|10",
+          ],
+        ],
+        [
+          "Would You Rather:",
+          [
+            "Yellow or purple|1",
+            "Taylor Swift or Justin Bieber|2",
+            "DC or Marvel|1",
+            "Spicy or sour|1",
+            "Hot or cold weather|1",
+            "Summer or winter|1",
+            "Feminine or masculine|1",
+            "Movies or TV|1",
+            "Xbox or Playstation|1",
+            "Simpsons or Family Guy|2",
+          ],
+        ],
+        [
+          "",
+          [
+            "Cats or dogs|1",
+            "Board games or card games|2",
+            "Outside or inside movies|2",
+            "The Office or Parks and Recreation|3",
+            "Jurassic Park or World|2",
+            "Disneyland or Universal Studios|2",
+            "Take a bath in lemon juice while you’re covered in paper cuts or put a toothpick in your toenail and kick the wall|3",
+            "McDonalds or Burger King|2",
+            "Horror or comedy|1",
+            "Heavy metal or alternative rock|2",
+            "Harry Potter or Lord of the Rings|3",
+            "Star Wars or Star Trek|2",
+            "Subway or Jimmy Johns|2",
+            "Invisibility or mind control|2",
+            "Juice WRLD or XXXTENTACION|2",
+            "Baseball or soccer(football)|1",
+          ],
+        ],
+        [
+          "Life/School:",
+          [
+            "Do you have any pets|6",
+            "How many people are in your family|5",
+            "How many friends do you have|3",
+            "What kind of school do you go to|4",
+            "Last bad grade|6",
+            "Last good grade|6",
+            "Favorite class|3",
+            "Least favorite class|3",
+            "Favorite teacher|3",
+            "Least favorite teacher|3",
+            "What’s your school’s colors|3",
+            "What’s your school’s mascot|2",
+            "Craziest thing to happen at your school|20",
+            "Are you in any clubs|6",
+            "Do you play any sports|6",
+            "Do you have a job|6",
+            "Do you go to the gym|6",
+            "Least favorite person|4",
+            "Least favorite relative|4",
+            "Are you friends with anyone more than 3 years younger than you|8",
+            "Are you friends with anyone more than 3 years older than you|8",
+          ],
+        ],
+      ];
+
+      const W =
+        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat".split(
+          " ",
+        );
+      function lorem(n, seed) {
+        let o = [];
+        for (let i = 0; i < n; i++) o.push(W[(seed * 3 + i) % W.length]);
+        let s = o.join(" ");
+        return s.charAt(0).toUpperCase() + s.slice(1) + (n > 2 ? "." : "");
+      }
+      const groups = [];
+      let num = 0;
+      S.forEach((s, i) => {
+        const items = s[1].map((it) => {
+          const [t, n] = it.split("|");
+          num++;
+          return { id: num, t, n: +n };
+        });
+        if (!s[0]) groups[groups.length - 1].items.push(...items);
+        else groups.push({ name: s[0].replace(/:$/, ""), items });
+      });
+      const grid = document.getElementById("grid"),
+        chips = document.getElementById("chips"),
+        qs = [];
+      let cat = "All";
+      function chip(n) {
+        const b = document.createElement("button");
+        b.className = "chip" + (n === "All" ? " on" : "");
+        b.textContent = n;
+        b.onclick = () => {
+          cat = n;
+          [...chips.children].forEach((c) => c.classList.toggle("on", c === b));
+          filter();
+        };
+        chips.appendChild(b);
+      }
+      chip("All");
+      groups.forEach((g) => {
+        chip(g.name.split("/")[0].replace("The ", ""));
+        g.chip = g.name.split("/")[0].replace("The ", "");
+        const sec = document.createElement("section");
+        sec.className = "sec";
+        sec.innerHTML =
+          "<h2>" + g.name + "<span>" + g.items.length + "</span></h2>";
+        g.el = sec;
+        g.items.forEach((it) => {
+          const b = document.createElement("button");
+          b.className = "q";
+          b.setAttribute("aria-expanded", "false");
+          b.innerHTML = "<b>" + it.id + "</b>";
+          b.appendChild(document.createTextNode(it.t));
+          b.insertAdjacentHTML("beforeend", "<s>›</s>");
+          const a = document.createElement("div");
+          a.className = "a";
+          const real = ANSWERS[it.id];
+          if (real) a.textContent = real;
+          if (real) a.style.whiteSpace = "pre-line";
+          else {
+            const i = document.createElement("i");
+            i.textContent = lorem(it.n, it.id);
+            a.appendChild(i);
+          }
+          const set = (o) => {
+            a.classList.toggle("show", o);
+            b.classList.toggle("open", o);
+            b.setAttribute("aria-expanded", o);
+          };
+          b.onclick = () => set(!a.classList.contains("show"));
+          sec.append(b, a);
+          qs.push({ it, b, a, g, set });
+        });
+        grid.appendChild(sec);
+      });
+      function filter() {
+        const v = document.getElementById("s").value.trim().toLowerCase();
+        let any = false;
+        groups.forEach((g) => {
+          let n = 0;
+          qs.filter((q) => q.g === g).forEach((q) => {
+            const ok =
+              (cat === "All" || cat === g.chip) &&
+              (!v || q.it.t.toLowerCase().includes(v) || String(q.it.id) === v);
+            q.b.style.display = ok ? "" : "none";
+            if (!ok) q.set(false);
+            q.a.style.display =
+              ok && q.a.classList.contains("show") ? "block" : "";
+            if (ok) n++;
+          });
+          g.el.style.display = n ? "" : "none";
+          if (n) any = true;
+        });
+        document.getElementById("empty").style.display = any ? "none" : "block";
+      }
+      document.getElementById("s").oninput = filter;
+      let all = false;
+      document.getElementById("tg").onclick = function () {
+        all = !all;
+        qs.forEach((q) => {
+          if (q.b.style.display !== "none") q.set(all);
+        });
+        qs.forEach((q) => (q.a.style.display = ""));
+        this.textContent = all ? "Collapse all" : "Expand all";
+      };
+    </script>
+  </body>
+</html>

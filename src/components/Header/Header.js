@@ -53,6 +53,11 @@ const Header = () => (
           <NavLink>My Skills</NavLink>
         </Link>
       </li>
+      <li>
+        <Link href="/qna.html">
+          <NavLink>Q&A</NavLink>
+        </Link>
+      </li>
     </Div2>
     <Div3>
       <SocialIcons href="https://github.com/F1nndegamer">

@@ -157,6 +157,18 @@ export const projects = [
     id: 8,
   },
   {
+    title: "Q&A with Awen · The Number Game",
+    description:
+      "A self-hosted Q&A site with 141 questions covering game development, Unity, programming, and more. Interactive search and filtering capabilities.",
+    image: "",
+    tags: ["Q&A", "Numbers", "Game Development", "Unity", "Community"],
+    source: "https://f1nn.me/qna.html",
+    visit: "https://f1nn.me/qna.html",
+    playtitle: "The Number Game",
+    extratitle: "Q&A site",
+    id: 10,
+  },
+  {
     title: "Portfolio",
     description:
       "The website you are currently on, made with React and Next.js. This is the first time making a website with these frameworks.",
