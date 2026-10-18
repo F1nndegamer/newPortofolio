@@ -1076,14 +1076,14 @@
           const section = document.getElementById("community");
           const clist = document.getElementById("clist");
           document.getElementById("ccount").textContent = list.length;
-          list.forEach((item) => {
+          list.forEach((item, idx) => {
             const wrap = document.createElement("div");
             wrap.className = "csec";
             const btn = document.createElement("button");
             btn.className = "cq";
             btn.type = "button";
             btn.setAttribute("aria-expanded", "false");
-            btn.innerHTML = "<b>" + item.id + "</b>";
+            btn.innerHTML = "<b>" + (idx + 1) + "</b>";
             btn.appendChild(document.createTextNode(item.question));
             btn.insertAdjacentHTML("beforeend", "<s>›</s>");
             const ans = document.createElement("div");
