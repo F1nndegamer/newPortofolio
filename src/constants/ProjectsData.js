@@ -14,7 +14,7 @@ export const projects = [
     description: "Shoot robots to the beat as your guns deteriorate!",
     image: "/images/mech.png",
     tags: ["Game", "Action", "Unity", "Shooter"],
-    source: "https://github.com/f1nndegamer/gmtk-2026",
+    source: "https://github.com/f1nndegamer/GMTK2026",
     visit: "https://f1nndegamer.itch.io/mechtronome",
     playtitle: "Open project",
     extratitle: "Code repo",
