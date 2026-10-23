@@ -19,9 +19,9 @@ const About = () => (
     <AboutContainer>
       <AboutText>
         <SectionText>
-          My name is Finn Awen Nijpels, also known as F1nn or F1nndegamer. I am
-          a Unity game developer who creates games, game jam
-          projects, and prototypes using C# and Unity.
+          My name is Awen Nijpels, also known as F1nn or F1nndegamer. I am a
+          Unity game developer who creates games, game jam projects, and
+          prototypes using C# and Unity.
         </SectionText>
         <SectionText>
           I started making games after a friend told me: “Hey, you’re smart,
@@ -38,12 +38,13 @@ const About = () => (
           others!
         </SectionText>
         <SectionText>
-          I'm non-binary, specifically aporagender/Maverique (third gender), and I use they/them pronouns.
+          I'm non-binary, specifically aporagender/Maverique (third gender), and
+          I use they/them pronouns.
         </SectionText>
         <SectionText>
-          Musically, I recently got a piano and have playing a bit.
-          I’ve been playing ukulele for about a year and also play a bit of
-          guitar. I don't yet, but I would love to make some music for a game.
+          Musically, I recently got a piano and have playing a bit. I’ve been
+          playing ukulele for about a year and also play a bit of guitar. I
+          don't yet, but I would love to make some music for a game.
         </SectionText>
       </AboutText>
       <ImageContainer>

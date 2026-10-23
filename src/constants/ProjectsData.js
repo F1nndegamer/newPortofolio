@@ -1,5 +1,26 @@
 export const projects = [
   {
+    title: "Monkey Daycare",
+    description: "Run a chaotic monkey farm, filled with naughty monkeys",
+    image: "/images/Monkey.png",
+    tags: ["Unity", "Game", "C#"],
+    source: "https://github.com/F1nndegamer/Brackeys-26.2",
+    visit: "https://aspiremade.itch.io/monkey-daycare",
+    playtitle: "Play the game",
+    id: 11,
+  },
+  {
+    title: "Mechtronome",
+    description: "Shoot robots to the beat as your guns deteriorate!",
+    image: "/images/mech.png",
+    tags: ["Game", "Action", "Unity", "Shooter"],
+    source: "https://github.com/f1nndegamer/gmtk-2026",
+    visit: "https://f1nndegamer.itch.io/mechtronome",
+    playtitle: "Open project",
+    extratitle: "Code repo",
+    id: 11,
+  },
+  {
     title: "Tribes",
     description:
       "Tribes is a real-time strategy game where you build, battle, and survive against rival clans in a dynamic world of shifting dangers and opportunities.",
@@ -9,7 +30,7 @@ export const projects = [
     visit: "https://store.steampowered.com/app/3551950/Tribes/",
     playtitle: "Play the Demo!",
     extratitle: "Join the discord!",
-    currentProject: true,
+    currentProject: false,
     id: -1,
   },
   {
